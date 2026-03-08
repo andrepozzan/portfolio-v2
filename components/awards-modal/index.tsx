@@ -56,10 +56,16 @@ export default function AwardsModal(data: any) {
                   className="w-full max-w-3xl"
                   src={data.award.imageLink}
                 />
-                <p className="max-w-96 ml-8">{data.award.description}</p>
+                <p className="max-w-96 ml-8">
+                  {data.award.description}
+                </p>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
+                <Button
+                  color="danger"
+                  variant="light"
+                  onPress={onClose}
+                >
                   Fechar
                 </Button>
                 <a

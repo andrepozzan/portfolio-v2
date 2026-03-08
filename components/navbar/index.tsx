@@ -31,7 +31,9 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   useEffect(() => {
-    const menuElements = document.querySelectorAll(".nextUINavBar__item-text");
+    const menuElements = document.querySelectorAll(
+      ".nextUINavBar__item-text",
+    );
 
     if (isMenuOpen) {
       document.body.classList.add("menu-open");
@@ -57,7 +59,9 @@ export const Navbar = () => {
   };
 
   const useSectionDetection = () => {
-    const [activeSection, setActiveSection] = useState<string | null>(null);
+    const [activeSection, setActiveSection] = useState<string | null>(
+      null,
+    );
 
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
@@ -70,7 +74,8 @@ export const Navbar = () => {
 
         if (
           scrollPosition >= sectionTop - windowHeight / 2 &&
-          scrollPosition < sectionTop + sectionHeight - windowHeight / 2
+          scrollPosition <
+            sectionTop + sectionHeight - windowHeight / 2
         ) {
           setActiveSection(section.id);
         }
@@ -122,15 +127,16 @@ export const Navbar = () => {
           selectedKey={activeSection}
           size="md"
           variant="light"
-          onSelectionChange={(key) => handleSelectionChange(key.toString())}
+          onSelectionChange={(key) =>
+            handleSelectionChange(key.toString())
+          }
         >
           {siteConfig.navItems.map((item) => (
             <Tab
               key={item.id}
               className="nextUINavbar__item-tab"
               title={
-                <NavbarItem
-                  key={item.id}
+                <div
                   className={clsx(
                     linkStyles({ color: "foreground" }),
                     "data-[active=true]:text-primary data-[active=true]:font-medium",
@@ -160,7 +166,7 @@ export const Navbar = () => {
                       {item.label}
                     </div>
                   )}
-                </NavbarItem>
+                </div>
               }
             />
           ))}

@@ -47,7 +47,9 @@ export default function Projects() {
                   <small className="text-default-500 uppercase">
                     {project.technologies}
                   </small>
-                  <h4 className={title({ size: "ssm" })}>{project.title}</h4>
+                  <h4 className={title({ size: "ssm" })}>
+                    {project.title}
+                  </h4>
                 </div>
 
                 <Chip

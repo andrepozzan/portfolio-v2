@@ -21,19 +21,23 @@ export default function Introduction() {
           <br />
           <div className="introduction__text-content-subtitle">
             <div className={title({ size: "sm" })}>Discente na </div>
-            <div className={title({ color: "blue", size: "sm" })}>UFPR</div>
+            <div className={title({ color: "blue", size: "sm" })}>
+              UFPR
+            </div>
           </div>
         </h1>
         <p className="mt-4">
-          Ingressei na universidade em fevereiro de 2024 e desde então tenho me
-          dedicado a aprender e me desenvolver em diversas áreas, desde a
+          Ingressei na universidade em fevereiro de 2024 e desde então
+          tenho me dedicado a aprender e me desenvolver em diversas
+          áreas, desde a
           <strong className="text-green-600 dark:text-green-400">
             {" "}
             programação full stack{" "}
           </strong>
-          até a eletrônica. Durante esse período, participei de diversos
-          projetos acadêmicos e extracurriculares que me permitiram aplicar e
-          expandir meus conhecimentos teóricos na prática.
+          até a eletrônica. Durante esse período, participei de
+          diversos projetos acadêmicos e extracurriculares que me
+          permitiram aplicar e expandir meus conhecimentos teóricos na
+          prática.
         </p>
 
         <div className="introduction__logo mt-5 rounded-3xl" />
@@ -44,7 +48,11 @@ export default function Introduction() {
             </Button>
           </a>
           <a href={"mailto:" + siteConfig.links.email}>
-            <Button className="mt-8 ml-4" color="primary" variant="bordered">
+            <Button
+              className="mt-8 ml-4"
+              color="primary"
+              variant="bordered"
+            >
               Entre em contato
             </Button>
           </a>

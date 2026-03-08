@@ -38,7 +38,11 @@ export default function Home() {
       <div className="introduction__background-overlay">
         <Introduction />
         <div className="introduction__divider w-full left-0 opacity-50 h-24 bg-divider shadow-2xl">
-          <Chip className="textAnimation" color="primary" variant="dot">
+          <Chip
+            className="textAnimation"
+            color="primary"
+            variant="dot"
+          >
             André Corso Pozzan - Engenharia elétrica UFPR
           </Chip>
         </div>

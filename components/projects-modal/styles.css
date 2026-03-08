@@ -1,3 +1,7 @@
+.light .project-modal__link {
+  color: #102031;
+}
+
 @media screen and (min-width: 0px) {
   .projects-modal {
     max-height: 85vh;

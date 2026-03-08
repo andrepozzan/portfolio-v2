@@ -11,6 +11,7 @@ import { Image } from "@nextui-org/image";
 import { Github, Linkedin } from "@styled-icons/bootstrap";
 import { BrowserOutline } from "@styled-icons/evaicons-outline";
 import { Chip } from "@nextui-org/chip";
+import { useEffect } from "react";
 
 import { title } from "@/components/primitives";
 
@@ -18,6 +19,10 @@ import "./styles.css";
 
 export default function ModalComponent(data: any) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
+  useEffect(() => {
+    console.log(isOpen);
+  }, [isOpen]);
 
   return (
     <>
@@ -81,7 +86,7 @@ export default function ModalComponent(data: any) {
                   <ul className="flex justify-evenly">
                     {data.project.websiteLink != "" ? (
                       <a
-                        className="hover:text-primary-500 transition-all duration-200"
+                        className="hover:text-primary-500 transition-all duration-200 project-modal__link"
                         href={data.project.websiteLink}
                         rel="noreferrer"
                         target="_blank"
@@ -92,7 +97,7 @@ export default function ModalComponent(data: any) {
 
                     {data.project.githubLink != "" ? (
                       <a
-                        className="hover:text-primary-500 transition-all duration-200"
+                        className="hover:text-primary-500 transition-all duration-200 project-modal__link"
                         href={data.project.githubLink}
                         rel="noreferrer"
                         target="_blank"
@@ -103,7 +108,7 @@ export default function ModalComponent(data: any) {
 
                     {data.project.linkedinLink != "" ? (
                       <a
-                        className="hover:text-primary-500 transition-all duration-200"
+                        className="hover:text-primary-500 transition-all duration-200 project-modal__link"
                         href={data.project.linkedinLink}
                         rel="noreferrer"
                         target="_blank"
@@ -152,7 +157,11 @@ export default function ModalComponent(data: any) {
                 </div>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
+                <Button
+                  color="danger"
+                  variant="light"
+                  onPress={onClose}
+                >
                   Fechar
                 </Button>
                 <a

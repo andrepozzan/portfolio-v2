@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
+import Script from "next/script";
 
 import { Providers } from "./providers";
 
@@ -35,17 +36,41 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning className="scroll-smooth" lang="en">
       <head>
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
-         (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "${secrets.clarityId}");`,
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${secrets.clarityId}");`,
           }}
         />
-        ;
+        <meta
+          content="André Corso Pozzan, discente de engenharia elétrica na Universidade Federal do Paraná, programador front-end e back-end full-stack"
+          name="description"
+        />
+
+        <link
+          href="assets/logo/favicon.svg"
+          rel="shortcut icon"
+          type="image/x-icon"
+        />
+
+        <meta content="André Corso Pozzan" property="og:title" />
+        <meta content="website" property="og:type" />
+        <meta content="https://andrepozzan.eng.br/" property="og:url" />
+        <meta
+          content="http://andrepozzan.eng.br/assets/logo/andre-perfil.jpeg"
+          itemProp="image"
+          property="og:image"
+        />
+        <meta content="300" property="og:image:width" />
+        <meta content="300" property="og:image:height" />
+        <meta
+          content="André Corso Pozzan, discente de engenharia elétrica na Universidade Federal do Paraná, programador front-end back-end full-stack"
+          property="og:description"
+        />
       </head>
       <body
         className={clsx(
@@ -53,6 +78,21 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+        <link
+          href="http://andrepozzan.eng.br/assets/logo/andre-perfil.jpeg"
+          itemProp="thumbnailUrl"
+        />
+        <span
+          itemScope
+          itemProp="thumbnail"
+          itemType="http://schema.org/ImageObject"
+        >
+          <link
+            href="http://andrepozzan.eng.br/assets/logo/andre-perfil.jpeg"
+            itemProp="url"
+          />
+        </span>
+
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <Navbar />
           <div className="relative flex flex-col h-screen">
